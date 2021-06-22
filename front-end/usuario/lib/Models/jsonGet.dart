@@ -1,9 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'package:usuario/Models/userGet.dart';
 
-Future<List<User>> getComment(json) async {
+Future<List<User>> getComment() async {
   final url = Uri.parse(
-    'https://17a4b695e99a.ngrok.io/comments2',
+    'https://4e1c6f41f5ef.ngrok.io/user',
   );
   final respuesta = await http.get(
     url,

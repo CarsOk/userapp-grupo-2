@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:usuario/Models/jsonGet.dart';
 import 'package:usuario/Models/userGet.dart';
 
 import 'Data.dart';
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
         },
       ),
       body: FutureBuilder<List<User>>(
-          future: null,
+          future: getComment(),
           builder: (BuildContext context, AsyncSnapshot<List<User>> snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               usuarios = snapshot.data;
