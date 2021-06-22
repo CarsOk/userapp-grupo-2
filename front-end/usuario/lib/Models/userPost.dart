@@ -10,26 +10,22 @@ String userPostToJson(UserPost data) => json.encode(data.toJson());
 
 class UserPost {
   UserPost({
-    this.id,
     this.name,
     this.email,
     this.year,
   });
 
-  int id;
   String name;
   String email;
-  int year;
+  String year;
 
   factory UserPost.fromJson(Map<String, dynamic> json) => UserPost(
-        id: json["id"],
         name: json["name"],
         email: json["email"],
-        year: json["year"],
+        year: json["year"].toString(),
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
         "name": name,
         "email": email,
         "year": year,
