@@ -3,7 +3,7 @@ import 'package:usuario/Models/userGet.dart';
 
 Future<List<User>> getComment() async {
   final url = Uri.parse(
-    'https://4e1c6f41f5ef.ngrok.io/user',
+    'https://6d146faafce5.ngrok.io/user',
   );
   final respuesta = await http.get(
     url,
