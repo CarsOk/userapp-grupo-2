@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:usuario/Models/jsonShow.dart';
-import 'package:usuario/Models/userGet.dart';
 import 'package:usuario/Models/userShow.dart';
 
 class Info extends StatelessWidget {
@@ -18,12 +17,32 @@ class Info extends StatelessWidget {
           future: showComment(id),
           builder: (BuildContext context, AsyncSnapshot<UserShow> snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return Column(
-                children: [
-                  Text(snapshot.data.name),
-                  Text(snapshot.data.email),
-                  Text(snapshot.data.year.toString()),
-                ],
+              return Container(
+                padding: EdgeInsets.all(15),
+                child: Center(
+                    child: Column(
+                  children: [
+                    CircleAvatar(
+                      child: Text(
+                        snapshot.data.name.substring(0, 1),
+                        textScaleFactor: 4.5,
+                      ),
+                      maxRadius: 60,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      snapshot.data.name,
+                      textScaleFactor: 2.5,
+                    ),
+                    Text(
+                      'Email: ${snapshot.data.email}',
+                      textScaleFactor: 1.5,
+                    ),
+                    Text('Edad: ${snapshot.data.year.toString()}'),
+                  ],
+                )),
               );
             }
             return CircularProgressIndicator();
@@ -31,3 +50,5 @@ class Info extends StatelessWidget {
     );
   }
 }
+
+class $ {}

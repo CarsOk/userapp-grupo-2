@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
         title: Text('Datos'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.plus_one),
+        child: Icon(Icons.group_add),
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Data()));
