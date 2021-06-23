@@ -3,6 +3,7 @@ import 'package:usuario/Models/jsonGet.dart';
 import 'package:usuario/Models/userGet.dart';
 
 import 'Data.dart';
+import 'info.dart';
 
 class Home extends StatelessWidget {
   final user = User();
@@ -39,8 +40,16 @@ class Home extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           User user = usuarios[index];
           return ListTile(
-            title: Text(user.email),
-          );
+              leading: Icon(
+                Icons.email,
+                color: Colors.blue,
+              ),
+              title: Text(user.name),
+              subtitle: new Text(user.email),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Info(user.id)));
+              });
         });
   }
 }
