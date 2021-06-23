@@ -3,8 +3,6 @@ import 'package:usuario/Models/jsonpost.dart';
 import 'package:usuario/Models/userPost.dart';
 import 'package:usuario/main.dart';
 
-import 'home.dart';
-
 class Data extends StatelessWidget {
   final comentarios = UserPost();
   @override

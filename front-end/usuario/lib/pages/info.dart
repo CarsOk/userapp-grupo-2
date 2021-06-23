@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:usuario/Models/jsonShow.dart';
 import 'package:usuario/Models/userShow.dart';
 
+import '../main.dart';
+
 class Info extends StatelessWidget {
   int id;
   Info(this.id);
@@ -12,6 +14,12 @@ class Info extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Informacion de usuario'),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pop(
+                  context, MaterialPageRoute(builder: (context) => MyApp()));
+            }),
       ),
       body: FutureBuilder<UserShow>(
           future: showComment(id),
@@ -37,7 +45,7 @@ class Info extends StatelessWidget {
                       textScaleFactor: 2.5,
                     ),
                     Text(
-                      'Email: ${snapshot.data.email}',
+                      snapshot.data.email,
                       textScaleFactor: 1.5,
                     ),
                     Text('Edad: ${snapshot.data.year.toString()}'),
