@@ -14,6 +14,7 @@ class UserController < ApplicationController
       end
     
       def show
+        
         usuario = User.find(params[:id])
         render json: usuario, estatus: 200
       end
