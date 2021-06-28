@@ -44,6 +44,9 @@ class Info extends StatelessWidget {
                       snapshot.data.name,
                       textScaleFactor: 2.5,
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Text(
                       snapshot.data.email,
                       textScaleFactor: 1.5,

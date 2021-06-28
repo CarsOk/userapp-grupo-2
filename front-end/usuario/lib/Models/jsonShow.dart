@@ -3,7 +3,7 @@ import 'package:usuario/Models/userShow.dart';
 
 Future<UserShow> showComment(int id) async {
   final url = Uri.parse(
-    'https://d5e628e59660.ngrok.io/user/$id',
+    'https://fa1bc552e7a9.ngrok.io/user/$id',
   );
   final respuesta = await http.get(
     url,
