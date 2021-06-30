@@ -42,10 +42,19 @@ class Home extends StatelessWidget {
           return ListTile(
               leading: Icon(
                 Icons.email,
-                color: Colors.blue,
+                color: Colors.amberAccent,
               ),
-              title: Text(user.name),
-              subtitle: new Text(user.email),
+              title: Text(
+                user.name,
+                style: TextStyle(
+                    color: Colors.blueAccent,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              subtitle: new Text(
+                user.email,
+                style: TextStyle(fontSize: 18),
+              ),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Info(user.id)));

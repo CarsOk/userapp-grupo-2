@@ -44,9 +44,15 @@ class Info extends StatelessWidget {
                       snapshot.data.name,
                       textScaleFactor: 2.5,
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       snapshot.data.email,
                       textScaleFactor: 1.5,
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
                     Text('Edad: ${snapshot.data.year.toString()}'),
                   ],

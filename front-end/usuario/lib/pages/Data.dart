@@ -9,7 +9,11 @@ class Data extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         title: Text('formulario'),
+        centerTitle: true,
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -17,15 +21,53 @@ class Data extends StatelessWidget {
           children: [
             TextField(
               onChanged: (valor) => comentarios.name = valor,
-              decoration: InputDecoration(hintText: "Nombre"),
+              decoration: InputDecoration(
+                  hintText: "Nombre",
+                  hintStyle: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                  icon: Icon(
+                    Icons.account_circle,
+                    color: Colors.amberAccent,
+                  )),
+            ),
+            SizedBox(
+              height: 20,
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress,
               onChanged: (valor) => comentarios.email = valor,
-              decoration: InputDecoration(hintText: "email"),
+              decoration: InputDecoration(
+                  hintText: "email",
+                  hintStyle: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                  icon: Icon(
+                    Icons.email,
+                    color: Colors.amberAccent,
+                  )),
+            ),
+            SizedBox(
+              height: 20,
             ),
             TextField(
+              keyboardType: TextInputType.number,
               onChanged: (valor) => comentarios.year = valor,
-              decoration: InputDecoration(hintText: "Edad"),
+              decoration: InputDecoration(
+                  hintText: "Edad",
+                  hintStyle: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                  icon: Icon(
+                    Icons.date_range,
+                    color: Colors.amberAccent,
+                  )),
+            ),
+            SizedBox(
+              height: 20,
             ),
             ElevatedButton(
                 onPressed: () async {
