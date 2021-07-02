@@ -1,10 +1,12 @@
 class UserController < ApplicationController
+  
     def index
        usuario= User.all
         render json: usuario, status: 200
       end
     
       def create
+
         usuario = User.create(
           name: params[:name],
           email: params[:email],
