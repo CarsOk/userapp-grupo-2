@@ -39,6 +39,7 @@ class Home extends StatelessWidget {
         itemCount: usuarios.length,
         itemBuilder: (BuildContext context, int index) {
           User user = usuarios[index];
+
           return ListTile(
               leading: Icon(
                 Icons.email,
@@ -59,6 +60,7 @@ class Home extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Info(user.id)));
               });
+
         });
   }
 }
