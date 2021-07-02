@@ -39,19 +39,28 @@ class Home extends StatelessWidget {
         itemCount: usuarios.length,
         itemBuilder: (BuildContext context, int index) {
           User user = usuarios[index];
-          return Card(
-            child: ListTile(
-                leading: Icon(
-                  Icons.email,
-                  color: Colors.blue,
-                ),
-                title: Text(user.name),
-                subtitle: new Text(user.email),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Info(user.id)));
-                }),
-          );
+
+          return ListTile(
+              leading: Icon(
+                Icons.email,
+                color: Colors.amberAccent,
+              ),
+              title: Text(
+                user.name,
+                style: TextStyle(
+                    color: Colors.blueAccent,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              subtitle: new Text(
+                user.email,
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Info(user.id)));
+              });
+
         });
   }
 }
